@@ -1,0 +1,28 @@
+{
+  "private": true,
+  "name": "protractor-sample",
+  "version": "1.0.0",
+  "description": "protractor-sample",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jasmine": "^2.5.54",
+    "@types/jasminewd2": "^2.0.3",
+    "@types/lodash": "^4.14.74",
+    "@types/log4js": "0.0.33",
+    "@types/node": "^8.0.25",
+    "@types/protractor": "^4.0.0",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-jasmine": "^2.4.2",
+    "gulp-protractor": "^4.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-typescript": "^3.2.2",
+    "jasmine": "^2.8.0",
+    "lodash": "^4.17.4",
+    "log4js": "^2.3.3",
+    "protractor": "^5.1.2",
+    "protractor-intercept": "^1.0.2",
+    "typescript": "^2.4.2"
+  },
+  "scripts": {}
+}
