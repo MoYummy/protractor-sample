@@ -1,0 +1,31 @@
+sudo: required
+dist: trusty
+
+language: node_js
+node_js:
+  - 8.2
+
+services:
+  - docker
+
+env:
+  DOCKER_COMPOSE_VERSION: 1.4.2
+
+before_install:
+- echo "before install"
+
+install:
+- docker-compose build
+
+script:
+- docker-compose up --abort-on-container-exit
+
+after_success:
+  - cat $TRAVIS_BUILD_DIR/logs/*.log
+  - sudo rm -f $TRAVIS_BUILD_DIR/logs/*.log
+  - docker ps -a | grep "Exited" | awk '{print $1 }' | xargs docker stop
+  - docker ps -a | grep "Exited" | awk '{print $1 }' | xargs docker rm
+  - docker images | grep none | awk '{print $3 }' | xargs docker rmi
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    echo "commit on master";
+    fi
